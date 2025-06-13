@@ -1,0 +1,20 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Campton', sans-serif;
+}
+
+body::-webkit-scrollbar{
+  width:8px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #32338b;
+
+
+}
+

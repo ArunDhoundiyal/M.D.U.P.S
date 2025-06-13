@@ -1,0 +1,388 @@
+import styled, {keyframes} from 'styled-components';
+import {Link} from 'react-router-dom';
+import { FcDonate } from "react-icons/fc";
+import { RiExternalLinkLine } from "react-icons/ri";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
+export const AnchorTag = styled.a`
+font-style:inherit;
+text-decoration:none;
+`;
+
+export const LinkNavItem = styled(Link)`
+text-decoration:none;
+color:inherit;
+`;
+
+export const NavbarCloseOpenButton = styled.button`
+cursor:pointer;
+background-color: transparent;
+border:none;
+color: #32338b;
+font-size:40px;
+margin-right:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+@media screen and (min-width:1451px){
+display:none;
+}
+transition-property: transform;
+transition-duration: 0.50s;
+transition-timing-funciton:ease-in-out;
+transform:${({rotate})=>(rotate ? `rotate(180deg)`: `rotate(deg)`)};
+`;
+
+
+export const HeaderContainer = styled.header`
+height:100px;
+position:fixed;
+top:0;
+width:100%;
+background-color: #ffffff;
+z-index:1000;
+`;
+
+export const Nav = styled.nav`
+background-size:cover;
+height:100%;
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+`;
+
+export const ImageLogo = styled.img`
+height:120px;
+width:120px;
+margin-left:20px;
+cursor:pointer;
+`;
+
+export const NavItemsContainer = styled.ul`
+list-style-type:none;
+display:flex;
+flex-direction:row;
+align-items:center;
+gap:20px;
+margin:0 20px;
+height:100%;
+@media screen and (max-width:1450px){
+display:none;
+}
+`;
+
+export const ListItem = styled.li`
+height:50px;
+cursor:pointer;
+color:${({isactive})=>isactive? ' #32338b' : ' #555555'};
+font-weight:bold;
+position:relative;
+display:flex;
+flex-direction:row;
+align-items:center;
+&::after{
+content:"";
+width:${({isactive})=>isactive? '100%' : '0%'};
+height:3px;
+background-color: #32338b;
+position:absolute;
+bottom:0;
+left:0;
+transition-property:width;
+transition-duration:0.25s;
+transition-timing-function:ease-in-out;
+}
+&:hover::after{
+width:100%;
+}
+&:hover{
+color:#002fa7;  
+font-weight:bold;
+}
+@media screen and (max-width:850px){
+display:none;
+}
+`;
+
+
+
+
+
+export const Button = styled.button`
+background-color:transparent;
+cursor:pointer;
+font-size:15px;
+color:#002fa7;
+height:45px;
+width:140px;
+font-weight:600;
+border:solid 3px #32338b;
+border-radius:8px;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+transition-property:background-color, color;
+transition-duration:0.25s;
+transition-timing-function:ease-in-out;
+&:hover{
+background-color: #32338b;
+color:#ffffff;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+`;
+
+const zoomInzoonOut = keyframes`
+from{
+transform:scale(1);
+}
+to{
+transform:scale(0.8);
+}
+`;
+
+
+
+export const HeartIcon = styled(FcDonate)`
+margin-left:8px;    
+font-size:30px;
+animation-name: ${zoomInzoonOut};
+animation-duration:1.25s;
+animation-timing-function:ease-in-out;
+animation-iteration-count:infinite;
+animation-direction:alternate;
+`;
+
+export const NavSideBarBlurBackgroundConatiner = styled.div`
+display:${({isactive})=>isactive ? 'flex' : 'none'};
+position:fixed;
+top:100px;
+left:0;
+width:100%;
+height:100%;
+background-size:cover;
+background-color: rgba(0, 0, 0, 0.4);
+z-index:999;
+backdrop-filter:blur(8px);
+@meida screen and (min-width:1451px){
+display:none;
+}
+`;
+
+export const NavSideBar = styled.div`
+position:fixed;
+top:100px;
+right:0; 
+width:300px;
+height:100%;
+z-index:1000;
+background-color: #32338b;
+transform:${({isactive})=>isactive?'translateX(0)':'translateX(100%)'};
+transition-property:transform;
+transition-duration:0.50s;
+transition-timing-function: ease-in-out;
+@media screen and (min-width:1451px){
+display:none;
+}
+`;
+
+export const NavSideBarListItemContainer = styled.div`
+position:absolute;
+top:0;
+right:0;
+width:95%;
+height:100%;
+background-color: #ffffff;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+transform:${({isactive})=>isactive?'translateX(0)':'translateX(100%)'};
+transition-property:transform;
+transition-duration:1s;
+transition-timing-function: ease-in-out;
+@media screen and (min-width:1451px){
+display:none;
+}
+overflow:auto;
+&::-webkit-scrollbar{
+width:8px;
+}
+&::-webkit-scrollbar-thumb{
+background: #32338b;
+}
+`;
+
+export const NavSideBarItemContainer = styled.ul`
+list-style-type:none;
+color: #32338b;
+width:100%; 
+display:flex;
+flex-direction:column;
+`;
+
+export const NavSideBarSelectLanguage = styled.li`
+height:auto;
+text-align:left;
+width:100%;
+display:flex;
+flex-direction:column;
+color: #32338b;
+background-color: #ffffff;
+font-weight:500;
+font-size:18px; 
+
+`;
+
+export const SideBarSelectLanguage = styled.div`
+position:relative;
+padding:12px;
+cursor:pointer;
+`;
+
+
+export const SelectLanguageContainer = styled.ul`
+  list-style-type: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  max-height: ${({ isactive }) => (isactive ? '500px' : '0')}; 
+  opacity: ${({ isactive }) => (isactive ? '1' : '0')};
+  transition: max-height 0.50s ease, opacity 0.50s ease;
+`;
+
+export const SelectLanguageListItem = styled.li`
+width:100%;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+height:40px;
+cursor:pointer;
+color:${({isactive})=>isactive ? ' #ffffff' : ' #32338b'};
+background-color:${({isactive})=> isactive ? ' #32338b' : ' #ffffff'};
+transition: all 0.2s ease-in-out;
+&:hover{
+background-color: #32338b;
+color: #ffffff;
+}
+`;
+
+export const ArrowIcon = styled(MdKeyboardArrowDown)`
+position:absolute;
+top:8px;
+right:12px;
+font-size:28px;
+transform:${({isactive})=> isactive ? 'rotate(180deg)':'rotate(0deg)'};
+transition: transform 0.50s ease-in-out;
+`;
+
+
+export const SideBarNavListItem = styled.li`
+height:50px;
+width:100%;
+display:flex;
+flex-direction:row;
+justify-content:flex-start;
+align-items:center;
+color:${({isactive})=>isactive ? ' #ffffff' : ' #32338b'};
+background-color:${({isactive})=> isactive ? ' #32338b' : ' #ffffff'};
+transition: all 0.2s ease-in-out;
+&:hover{
+background-color: #32338b;
+color: #ffffff;
+}
+`;
+export const SideBarNavListItemContainer = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:flex-start;
+align-items:center;
+width:100%;
+height:100%;
+font-weight:500;
+font-size:18px; 
+background-color:transparent;
+padding-left:12px;
+`;
+
+export const NavSidebarMdupsFollowUsContainer = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+width:100%; 
+`;
+
+export const MdupsLogo = styled.img`
+height:150px;
+width:150px;
+`; 
+
+export const NavSideBarFollowUsContainer = styled.ul`
+display:flex;
+flex-direction:row;
+list-style-type:none;
+gap:10px;
+`;
+
+export const NavSideBarFollowUsIconItem = styled.li`
+height:30px;
+width:30px;
+position:relative;
+cursor:pointer;
+`;
+export const NavSideBarFollowUsIcon = styled.img`
+position:absolute;
+top:0;
+left:0;
+height:100%;
+width:100%; 
+object-fit:fill;
+`;
+
+export const NavSideBarFollowUsHeading = styled.h1`
+color: #555555;
+font-size:20px;
+font-weight:500;
+`;
+
+export const LinkIcon = styled(RiExternalLinkLine)`
+margin-left:8px;
+display:${({isactive})=> isactive ? 'none' : 'block'};
+`; 
+
+export const SideBarButton = styled.button`
+background-color:transparent;
+cursor:pointer;
+font-size:15px;
+color:#002fa7;
+height:45px;
+width:80%;
+font-weight:600;
+border:solid 3px #32338b;
+border-radius:8px;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+transition-property:background-color, color;
+transition-duration:0.25s;
+transition-timing-function:ease-in-out;
+&:hover{
+background-color: #32338b;
+color:#ffffff;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+margin:8px 0;
+flex-shrink:0;
+`;
+
+
+
+// NavSidebarMdupsFollowUsContainer
+
+
+
