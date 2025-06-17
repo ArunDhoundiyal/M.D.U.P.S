@@ -42,7 +42,7 @@ const NewsArticles = () => {
             <Header/>
             <ViewInFullSize setPassImage={setPassImage} imagePass={passImage} />
             <BackgroundImageContainer>
-                <BackgroundContentContent data-aos="zoom-in">
+                <BackgroundContentContent>
                     <Heading>
                         {topHeading}
                     </Heading>
@@ -74,7 +74,7 @@ const NewsArticles = () => {
 
                         return(
                             <>
-                            <ArticleContainer key={id} data-aos="zoom-in">
+                            <ArticleContainer key={id}>
                                 <TeamPersonPhotoContainer onClick={()=>{onClickViewInFullSize(img)}}>
                                     <NewsArticlesImg src={img} />
                                     </TeamPersonPhotoContainer>
@@ -120,7 +120,7 @@ const NewsArticles = () => {
                                         </Message>
                                     </TeamMessageContainer>
                                     </ArticleContainer>
-                                    <SmallScreenOurTeamMsgContainer data-aos="zoom-in">
+                                    <SmallScreenOurTeamMsgContainer>
                                         <MainHeading>
                                             {mainHeading || ''}
                                         </MainHeading>
@@ -169,7 +169,7 @@ const NewsArticles = () => {
                     }
                     return(
                         <>
-                    <ArticleContainer key={id} data-aos="zoom-in">
+                    <ArticleContainer key={id}>
                         <TeamPersonTwoPhotoContainer onClick={()=>{onClickViewInFullSize(img)}}>
                             <NewsArticlesImg src={img} />
                             </TeamPersonTwoPhotoContainer>
@@ -215,7 +215,7 @@ const NewsArticles = () => {
                                 </Message>
                         </TeamTwoMessageContainer>
                         </ArticleContainer>
-                        <SmallScreenOurTeamMsgContainer data-aos="zoom-in">
+                        <SmallScreenOurTeamMsgContainer>
                                         <MainHeading>
                                             {mainHeading || ''}
                                         </MainHeading>

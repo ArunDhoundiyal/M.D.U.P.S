@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {CreateLanguageContext} from '../Context';
 
 import {
@@ -21,19 +21,28 @@ import {
      LinkedinIcon, 
      YoutubeIcon, 
      AnchorTag, 
-     FooterFollowUsHeading, 
+     DropDownArrow, 
      HrLine, 
      CopyRightMsg, 
      FooterCopyRightContainer, 
      PrivacyContainer, 
      PrivacyPolicyMsg, 
      TermsConditionMsg, 
-     FollowUsIconButton
+     FollowUsIconButton, 
+     FooterItemParentContainer,
+     FooterDropDownButton, 
+     FollowUsIndicationArrow
 } from './styledComponents';
 
 import {footerData} from '../Data';
 
 const Footer = () => {
+    const [hide, setHide] = useState({
+        hideKnowAboutUs:false, 
+        hideOurInitiative:false,
+        hideJoinUs:false, 
+        hideContactUs:false
+    });
     const {languageId} = useContext(CreateLanguageContext);
     const findFooterData = footerData.find((eachItem)=>eachItem.languageId === languageId);
     const {
@@ -50,37 +59,71 @@ const Footer = () => {
         followUs
     } = findFooterData;
 
+    const onClickHideKnowAboutUs = () => {
+        setHide(preState => ({hideKnowAboutUs:!preState.hideKnowAboutUs}))
+    }
+    const onClickHideOurInitiative = () => {
+        setHide(preState => ({hideOurInitiative:!preState.hideOurInitiative}))
+    }
+
+    const onClickHideJoinUs = () => {
+        setHide(preState => ({hideJoinUs:!preState.hideJoinUs}))
+    }
+    const onClickHideContactUs = () => {
+                setHide(preState => ({hideContactUs:!preState.hideContactUs}))
+
+    }
+
 
     return(
         <FooterBgContainer id="contact-us" >
         <FooterContainer>
             <MDUPSlogo src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1747033857/Logo_uttrakhand_1_ahrajl.png' alt='mdups-logo'/>
-            <FooterItemContainer>
+            <FooterItemParentContainer onClick={onClickHideKnowAboutUs}>
+                <FooterDropDownButton>
+                    <DropDownArrow isactive={hide.hideKnowAboutUs} />
+                </FooterDropDownButton>
                 <FooterHeading>{footerKnowAboutUsHeading}</FooterHeading>
+            <FooterItemContainer isactive={hide.hideKnowAboutUs}>
                 {
                     knowAboutUs.map(({id, name})=> (
                         <FooterItem key={id}>{name}</FooterItem>
                     ))
                 }
             </FooterItemContainer>
-            <FooterItemContainer>
+            </FooterItemParentContainer>
+            <FooterItemParentContainer onClick={onClickHideOurInitiative}>
+                <FooterDropDownButton>
+                    <DropDownArrow isactive={hide.hideOurInitiative} />
+                </FooterDropDownButton>
                 <FooterHeading>{footerOurIntitiative}</FooterHeading>
+            <FooterItemContainer isactive={hide.hideOurInitiative}>
                 {
                     ourInitiative.map(({id, name})=> (
                         <FooterItem key={id}>{name}</FooterItem>
                     ))
                 }
             </FooterItemContainer>
-            <FooterItemContainer>
+            </FooterItemParentContainer >
+            <FooterItemParentContainer onClick={onClickHideJoinUs}>
+                <FooterDropDownButton>
+                    <DropDownArrow isactive={hide.hideJoinUs} />
+                </FooterDropDownButton>
                 <FooterHeading>{footerJoinUs}</FooterHeading>
+            <FooterItemContainer isactive={hide.hideJoinUs}>
                 {
                     getInvolved.map(({id, name})=> (
                         <FooterItem key={id}>{name}</FooterItem>
                     ))
                 }
             </FooterItemContainer>
-            <FooterContactUsContainer>
+            </FooterItemParentContainer>
+            <FooterItemParentContainer onClick={onClickHideContactUs}>
+                <FooterDropDownButton>
+                    <DropDownArrow isactive={hide.hideContactUs}/>
+                </FooterDropDownButton>
                 <FooterHeading>{footerContactUs}</FooterHeading>
+            <FooterContactUsContainer isactive={hide.hideContactUs}>
                     <FooterNameHeading>{mdups}</FooterNameHeading>
                 <FooterAddressContainer>
                 <LocationIcon/>
@@ -93,7 +136,10 @@ const Footer = () => {
                 <PhoneNumberIcon />
                 <Detail>+911145051545, 8178298679</Detail>
                 </FooterAddressContainer>
-                <FollowUsContainer>
+            </FooterContactUsContainer>
+            </FooterItemParentContainer>
+                            <FollowUsContainer>
+                                <FollowUsIndicationArrow />
                     <FooterHeading>{followUs}</FooterHeading>
                     <FollowUsLogoContainer>
                         <FollowUsIconButton>
@@ -127,10 +173,8 @@ const Footer = () => {
                         <YoutubeIcon />
                         </AnchorTag>
                         </FollowUsIconButton>
-
                     </FollowUsLogoContainer>
                 </FollowUsContainer>
-            </FooterContactUsContainer>
         </FooterContainer>
         <HrLine />
         <FooterCopyRightContainer>
@@ -140,12 +184,8 @@ const Footer = () => {
                 <TermsConditionMsg>Terms & Conditions</TermsConditionMsg>
             </PrivacyContainer>
         </FooterCopyRightContainer>
-
         </FooterBgContainer>
-
     )
 }
 
 export default Footer
-
-// 

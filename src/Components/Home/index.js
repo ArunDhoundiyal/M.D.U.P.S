@@ -251,21 +251,13 @@ const Home = () => {
       const onClickHomeAboutUsImage = (img) => {
         setPassImage(img)
       }
-
-      const navigateToDonateNow = () => {
-        navigate('/donation');
-      }
-
-      const navigateToJoinOurTeam = () => {
-        navigate("/join-our-team");
-      }
     return(
         <HomeContainer>
             <Header/> 
             <ViewInFullSize imagePass={imagePass} setPassImage={setPassImage} />
             <Banner/>
             {/* MDUPS logo ka parichye */}
-            <HomeMDUPSLogoMeaningContainer data-aos="zoom-in">
+            <HomeMDUPSLogoMeaningContainer >
               <HomeMDUPSLogoContainer onClick={()=>{(onClickHomeAboutUsImage('https://res.cloudinary.com/dflmaiwxo/image/upload/v1748690253/MDUPS_LOGO_HD_tgrqxx.webp'))}}>
                 <HomeMDUPSLogo src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1748690253/MDUPS_LOGO_HD_tgrqxx.webp' alt='mdups-logo-detailed-introduction-with-their-meaning' />
               </HomeMDUPSLogoContainer>
@@ -314,7 +306,7 @@ const Home = () => {
                 <HomeMDUPSLogoSubDescription><BoldArrowLine>-</BoldArrowLine> {mdupsFinalConclusionHeadingSubHeadingFourPointOne}</HomeMDUPSLogoSubDescription>
               </HomeMDUPSLogoContentContainer>
             </HomeMDUPSLogoMeaningContainer>
-            <SmallHomeMDUPSLogoContentContainer data-aos="zoom-in">
+            <SmallHomeMDUPSLogoContentContainer >
                 <MDUPSHeading>{mdupsTopLogoIntroduction}</MDUPSHeading>
                 <HomeMDUPSLogoDescription>
                   {mdupsTopLogoMsg}
@@ -360,7 +352,7 @@ const Home = () => {
             </SmallHomeMDUPSLogoContentContainer>
 
             {/* About us MDUPS */}
-            <HomeCardContainer data-aos="zoom-in">
+            <HomeCardContainer >
                 <HomeAboutUsCollargeContainer>
                   {
                     CarausalImage.map(({id, img})=>(
@@ -392,7 +384,7 @@ const Home = () => {
                 <Button onClick={navigateAboutUsPage}>{filterHomeAboutUsData.buttonText} <RightArrowIcon/></Button>
                 </HomeHeadingDesContainer>
             </HomeCardContainer>
-            <HomeHeadingAboutUsDesContainer data-aos="zoom-in">
+            <HomeHeadingAboutUsDesContainer >
                                 {
                     filterHomeAboutUsData.languageId !== 'ENGLISH' ? 
                     (
@@ -418,7 +410,7 @@ const Home = () => {
             </HomeHeadingAboutUsDesContainer>
 
            {/* Mission */}
-           <HomeCarausalCardContainer data-aos="zoom-in">
+           <HomeCarausalCardContainer >
             <HomeCarausalDesCardContainer>
             <Heading>
             {heading}
@@ -445,7 +437,7 @@ const Home = () => {
             </Slider> 
             </OurMissionCarausalContainer>
            </HomeCarausalCardContainer>
-           <AnotherOurMissionCarausalContainer data-aos="zoom-in">
+           <AnotherOurMissionCarausalContainer >
             <Slider {...settings}>
               {
                 filterMissionData.data.map(({ id,heading,description,icon:Icon,color})=>(
@@ -464,7 +456,7 @@ const Home = () => {
            </AnotherOurMissionCarausalContainer>
 
             {/* Vision and Mission  */}
-            <HomeVisionMissionHeadingCardContainer data-aos="zoom-in">
+            <HomeVisionMissionHeadingCardContainer >
               <Heading>{filterVisionMissionHeading.heading}</Heading>
               <HomeVisionAndMissionContainer>
   {
@@ -487,7 +479,7 @@ const Home = () => {
 </HomeVisionAndMissionContainer>
             </HomeVisionMissionHeadingCardContainer> 
            {/* Latest News and article */}
-           <CarausalContainer data-aos="zoom-in">
+           <CarausalContainer >
             <Heading>{filterNewsAndArticleHeading.heading}</Heading>
             <Slider {...settings}>
                 {data.map(item => (
@@ -500,7 +492,7 @@ const Home = () => {
             </Slider>
            </CarausalContainer> 
             {/* Our Team  */}
-             <HomeOurTeamBgContainer data-aos="zoom-in">
+             <HomeOurTeamBgContainer >
               <HomeOurTeamCollargeContainer>
                 <HomeOurTeamImageOneContainer onClick={()=>{(onClickHomeAboutUsImage('https://res.cloudinary.com/dflmaiwxo/image/upload/v1746439727/WhatsApp_Image_2025-04-07_at_15.26.13_da79a4d3_yy9w0j.jpg'))}}>
                   <HomeOurTeamImageOne alt='our-team-img-1' src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1746439727/WhatsApp_Image_2025-04-07_at_15.26.13_da79a4d3_yy9w0j.jpg' />
@@ -517,7 +509,7 @@ const Home = () => {
               <Button onClick={navigateToOurTeamPage}>{filterHomeMsgFromUs.button} <RightArrowIcon/></Button>
               </HomeOurTeamContentContainer>
             </HomeOurTeamBgContainer> 
-            <SmallScreenHomeOurTeamContentContainer data-aos="zoom-in">
+            <SmallScreenHomeOurTeamContentContainer >
                             <Heading>{filterHomeMsgFromUs.heading}</Heading>
               <HomeCardDescription>
                 {filterHomeMsgFromUs.msg}
@@ -528,7 +520,7 @@ const Home = () => {
             </SmallScreenHomeOurTeamContentContainer>
 
               {/* Feedback */}
-               <HomeCarausalCardContainer data-aos="zoom-in">
+               <HomeCarausalCardContainer >
             <HomeCarausalDesCardContainer>
             <Heading>
             {filterHomeTestimonialData.heading}
@@ -597,7 +589,7 @@ const Home = () => {
             </Slider> 
             </TestimonialCarausalContainer>
             </HomeCarausalCardContainer> 
-            <AnotherTestimonialCarausalContainer data-aos="zoom-in">
+            <AnotherTestimonialCarausalContainer >
                           <Slider {...settings}>
               {
                 filterTestimonialData.testimonials.map(({id,name,description, rating, color})=>{
@@ -657,7 +649,7 @@ const Home = () => {
             </Slider> 
             </AnotherTestimonialCarausalContainer>
             {/* Join Our Team */}
-             <HomeDonationContainer data-aos="zoom-in">
+             <HomeDonationContainer >
             <HomeJoinUsImageContainer>
               <JoinUsImage src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1747479924/WhatsApp_Image_2025-05-17_at_16.32.46_3aaf7343_bsecas.jpg' alt='join-our-team-img' />
             </HomeJoinUsImageContainer>
@@ -666,20 +658,20 @@ const Home = () => {
             <HomeCardDescription>
               {filterHomeJoinUsData.joinUsMsg}
             </HomeCardDescription>
-            <Button onClick={navigateToJoinOurTeam}>{filterHomeJoinUsData.buttonName} <RightArrowIcon/></Button>
+            <Button>{filterHomeJoinUsData.buttonName} <RightArrowIcon/></Button>
             </HomeJoinUsContentContainer>
            </HomeDonationContainer> 
-           <SmallScreenHomeJoinUsContentContainer data-aos="zoom-in">
+           <SmallScreenHomeJoinUsContentContainer >
                         <Heading>{filterHomeJoinUsData.joinUsHeading}</Heading>
             <HomeCardDescription>
               {filterHomeJoinUsData.joinUsMsg}
             </HomeCardDescription>
-            <Button onClick={navigateToJoinOurTeam}>{filterHomeJoinUsData.buttonName} <RightArrowIcon/></Button>
+            <Button>{filterHomeJoinUsData.buttonName} <RightArrowIcon/></Button>
 
             </SmallScreenHomeJoinUsContentContainer> 
 
            {/* Dontaion */}
-            <HomeDonationContainer data-aos="zoom-in">
+            <HomeDonationContainer >
             <HomeDonationImageContainer>
               <DonationImage src='https://res.cloudinary.com/da52fiag8/image/upload/v1744111622/ChatGPT_Image_Apr_8_2025_04_54_00_PM_f91xxs.jpg' alt='donation-img' />
             </HomeDonationImageContainer>
@@ -688,15 +680,15 @@ const Home = () => {
             <HomeCardDescription>
             {donationMsg}      
             </HomeCardDescription>
-            <Button onClick={navigateToDonateNow}>{buttonName}<HeartIcon/></Button>
+            <Button>{buttonName}<HeartIcon/></Button>
             </HomeDonationContentContainer>
            </HomeDonationContainer>  
-           <SmallScreenHomeDonationContentContainer data-aos="zoom-in">
+           <SmallScreenHomeDonationContentContainer >
             <Heading>{donationHeading}</Heading>
             <HomeCardDescription>
             {donationMsg}      
             </HomeCardDescription>
-            <Button onClick={navigateToDonateNow}>{buttonName}<HeartIcon/></Button>
+            <Button>{buttonName}<HeartIcon/></Button>
            </SmallScreenHomeDonationContentContainer>
            <WhatsApp />
            <ScrollToTopButton/>

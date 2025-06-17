@@ -3,6 +3,18 @@ import {Link} from 'react-router-dom';
 import { FcDonate } from "react-icons/fc";
 import { RiExternalLinkLine } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { LuCircleCheckBig } from "react-icons/lu";
+
+
+export const HeaderContainer = styled.header`
+height:100px;
+position:fixed;
+top:0;
+width:100%;
+background-color: #ffffff;
+z-index:1000;
+`;
+
 
 export const AnchorTag = styled.a`
 font-style:inherit;
@@ -19,7 +31,7 @@ cursor:pointer;
 background-color: transparent;
 border:none;
 color: #32338b;
-font-size:40px;
+font-size:30px;
 margin-right:20px;
 display:flex;
 justify-content:center;
@@ -31,16 +43,6 @@ transition-property: transform;
 transition-duration: 0.50s;
 transition-timing-funciton:ease-in-out;
 transform:${({rotate})=>(rotate ? `rotate(180deg)`: `rotate(deg)`)};
-`;
-
-
-export const HeaderContainer = styled.header`
-height:100px;
-position:fixed;
-top:0;
-width:100%;
-background-color: #ffffff;
-z-index:1000;
 `;
 
 export const Nav = styled.nav`
@@ -106,9 +108,6 @@ display:none;
 `;
 
 
-
-
-
 export const Button = styled.button`
 background-color:transparent;
 cursor:pointer;
@@ -118,7 +117,6 @@ height:45px;
 width:140px;
 font-weight:600;
 border:solid 3px #32338b;
-border-radius:8px;
 display:flex;
 flex-direction:row;
 justify-content:center;
@@ -185,6 +183,9 @@ transition-timing-function: ease-in-out;
 @media screen and (min-width:1451px){
 display:none;
 }
+@media screen and (max-width:400px){
+width:100%;
+}
 `;
 
 export const NavSideBarListItemContainer = styled.div`
@@ -216,7 +217,6 @@ background: #32338b;
 
 export const NavSideBarItemContainer = styled.ul`
 list-style-type:none;
-color: #32338b;
 width:100%; 
 display:flex;
 flex-direction:column;
@@ -228,11 +228,9 @@ text-align:left;
 width:100%;
 display:flex;
 flex-direction:column;
-color: #32338b;
-background-color: #ffffff;
+color: #555555;
 font-weight:500;
 font-size:18px; 
-
 `;
 
 export const SideBarSelectLanguage = styled.div`
@@ -261,7 +259,7 @@ justify-content:center;
 align-items:center;
 height:40px;
 cursor:pointer;
-color:${({isactive})=>isactive ? ' #ffffff' : ' #32338b'};
+color:${({isactive})=>isactive ? ' #ffffff' : ' #555555'};
 background-color:${({isactive})=> isactive ? ' #32338b' : ' #ffffff'};
 transition: all 0.2s ease-in-out;
 &:hover{
@@ -279,22 +277,35 @@ transform:${({isactive})=> isactive ? 'rotate(180deg)':'rotate(0deg)'};
 transition: transform 0.50s ease-in-out;
 `;
 
-
 export const SideBarNavListItem = styled.li`
-height:50px;
-width:100%;
-display:flex;
-flex-direction:row;
-justify-content:flex-start;
-align-items:center;
-color:${({isactive})=>isactive ? ' #ffffff' : ' #32338b'};
-background-color:${({isactive})=> isactive ? ' #32338b' : ' #ffffff'};
-transition: all 0.2s ease-in-out;
-&:hover{
-background-color: #32338b;
-color: #ffffff;
-}
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 500;
+  color: ${({ isactive }) => (isactive ? ' #32338b' : ' #555555')};
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  &:hover {
+    background-color: ${({ isactive }) => (isactive ? 'transparent' : ' #32338b')};
+    color: ${({ isactive }) => (isactive ? ' #32338b' : ' #ffffff')};
+  }
+    border-bottom:solid ${({ isactive }) => (isactive ? '2px #32338b' : '1px lightgrey')};
 `;
+
+export const IndicationActivePathArrowIcon = styled(LuCircleCheckBig)`
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+right:20px;
+font-size:30px;
+color:green;
+display:${({isactive})=>(isactive ? 'block' : 'none')};
+`;
+
+
 export const SideBarNavListItemContainer = styled.div`
 display:flex;
 flex-direction:row;
@@ -302,7 +313,6 @@ justify-content:flex-start;
 align-items:center;
 width:100%;
 height:100%;
-font-weight:500;
 font-size:18px; 
 background-color:transparent;
 padding-left:12px;
@@ -314,18 +324,20 @@ flex-direction:column;
 align-items:center;
 gap:10px;
 width:100%; 
+margin:50px 0;
 `;
 
 export const MdupsLogo = styled.img`
 height:150px;
 width:150px;
-`; 
+`;
 
 export const NavSideBarFollowUsContainer = styled.ul`
 display:flex;
 flex-direction:row;
 list-style-type:none;
 gap:10px;
+margin-bottom:100px;
 `;
 
 export const NavSideBarFollowUsIconItem = styled.li`
@@ -358,16 +370,12 @@ export const SideBarButton = styled.button`
 background-color:transparent;
 cursor:pointer;
 font-size:15px;
-color:#002fa7;
+color: #002fa7;
 height:45px;
-width:80%;
+width:100px;
 font-weight:600;
 border:solid 3px #32338b;
 border-radius:8px;
-display:flex;
-flex-direction:row;
-justify-content:center;
-align-items:center;
 transition-property:background-color, color;
 transition-duration:0.25s;
 transition-timing-function:ease-in-out;
@@ -376,13 +384,15 @@ background-color: #32338b;
 color:#ffffff;
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-margin:8px 0;
+margin:8px;
 flex-shrink:0;
 `;
 
-
-
-// NavSidebarMdupsFollowUsContainer
-
+export const SideBarButtonContainer = styled.div`
+display:flex;
+flex-direction:row;
+align-items:center;
+width:250px;
+`;
 
 

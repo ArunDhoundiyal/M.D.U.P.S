@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa";
-
 import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io5";
-
+import { IoIosArrowDown } from "react-icons/io";
+import { PiArrowBendRightDownBold } from "react-icons/pi";
 export const FacebookIcon = styled(FaFacebookF)``;
 export const LinkedinIcon = styled(FaLinkedinIn)``;
 export const YoutubeIcon = styled(IoLogoYoutube)``;
@@ -55,7 +55,7 @@ display:flex;
 flex-direction:column;
 width:100%;
 background-color: #32338b;
-margin-top:100px;
+margin-top:80px;
 position:relative;
 align-items:center;
 `;
@@ -69,12 +69,15 @@ justify-content:space-between;
 flex-wrap:wrap;
 width:80%;
 gap:40px;
-@media screen and (max-width:550px){
+@media screen and (max-width:555px){
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:0px;
-}
+gap:20px;
+margin-top:50px;
+} 
+// border:solid 4px red;
+margin-top:70px;
 `;
 
 export const MDUPSlogo = styled.img`
@@ -90,8 +93,45 @@ transform:scale(1.1);
 @media screen and (max-width:600px){
 height:150px;
 top:-80px;
+}
+@media screen and (max-width:400px){
+height:100px;
+top:-50px;
 
 }
+`;
+
+export const FooterItemParentContainer = styled.div`
+text-align:left;
+position:relative;
+height:fit-content;
+color: #ffffff;
+@media screen and (max-width:555px){
+width:100%;
+margin:0px;
+cursor:pointer; 
+}
+
+`;
+
+export const DropDownArrow = styled(IoIosArrowDown)`
+transform:rotate(${({isactive})=> isactive ? '180deg' : '0deg'});
+transition: transform 0.5s ease-in-out;
+`;
+
+
+export const FooterDropDownButton = styled.button`
+@media screen and (min-width:556px){
+display:none;
+}
+background-color: transparent;
+border:none;
+color: #ffffff;
+font-size:25px;
+position:absolute;
+right:0px;
+top:10px;
+cursor:pointer;
 `;
 
 export const FooterItemContainer = styled.ul`
@@ -101,27 +141,26 @@ text-align:left;
 color: #ffffff;
 list-style-type:none;
 gap:12px;
-margin-top:100px;
-@media screen and (max-width:550px){
-align-items:center;
+@media screen and (max-width:555px){
+width:100%;
+visibility:${({isactive})=> isactive ? 'visible' : 'hidden'};
+display:${({isactive})=> isactive ? 'flex' : 'none'};
 }
 `;
 
 export const FooterContactUsContainer = styled.div`
 display:flex;
 flex-direction:column;
-margin-top:100px;
 gap:18px;
 color: #ffffff;
-@media screen and (max-width:550px){
-align-items:center;
+@media screen and (max-width:555px){
+visibility:${({isactive})=> isactive ? 'visible' : 'hidden'};
+display:${({isactive})=> isactive ? 'flex' : 'none'};
 }
 `;
 
 export const FooterNameHeading = styled.h4`
 font-weight:600;
-text-decoration:underline;
-text-align:center;
 `;
 
 export const FooterAddressContainer = styled.div`
@@ -139,21 +178,32 @@ text-decoration:underline;
 cursor:pointer;
 }
 @media screen and (max-width:550px){
-text-align:center;
+text-align:left;
+width:100%;
 }
 `;
 
-export const FooterHeading = styled.h3``;
+export const FooterHeading = styled.h3`
+margin:12px 0;
+`;
 
 export const Detail = styled.p``;
 
 export const FollowUsContainer = styled.div`
 text-align:left;
 color: #ffffff;
-margin-top:12px;
+position:relative;
 @media screen and (max-width:550px){
-text-align:center;
+text-align:left;
+width:100%;
 }
+`;
+
+export const FollowUsIndicationArrow = styled(PiArrowBendRightDownBold)`
+position:absolute;
+top:20px;
+left:90px;
+font-size:22px;
 `;
 
 export const FollowUsLogoContainer = styled.div`

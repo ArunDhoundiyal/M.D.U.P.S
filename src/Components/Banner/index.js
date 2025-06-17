@@ -24,7 +24,7 @@ const Banner = () => {
             />
             Your browser does not support the video tag.
         </BannerContainer>
-        <BannerDisplayTextContainer data-aos="zoom-in">
+        <BannerDisplayTextContainer>
             <BannerMdupsLogoContainer>
                 <BannerMdupsLogoImg src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1747033857/Logo_uttrakhand_1_ahrajl.png' alt='mdups-logo'/>
             </BannerMdupsLogoContainer>

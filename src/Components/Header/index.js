@@ -1,5 +1,5 @@
 import {useState,useContext} from 'react';
-import { RiMenu3Line } from "react-icons/ri";
+import { TfiMenu } from "react-icons/tfi";
 import { IoMdClose } from "react-icons/io";
 import {useLocation} from 'react-router-dom';
 
@@ -18,7 +18,6 @@ import {
     NavSideBarListItemContainer, 
     NavSideBarItemContainer, 
     SideBarNavListItem, 
-    MdupsLogo, 
     NavSidebarMdupsFollowUsContainer, 
     NavSideBarFollowUsContainer, 
     NavSideBarFollowUsIconItem, 
@@ -32,7 +31,10 @@ import {
     SelectLanguageContainer, 
     SelectLanguageListItem, 
     SideBarSelectLanguage,
-    ArrowIcon
+    ArrowIcon, 
+    SideBarButtonContainer, 
+    IndicationActivePathArrowIcon, 
+    MdupsLogo
 } from './styledComponents'; 
 
 import {CreateLanguageContext} from '../Context';
@@ -58,6 +60,9 @@ const Header = () => {
     const filterJoinusButtonLanguage = joinOurTeamButtonData.find((item)=> item.languageId === languageId);
     const onClickMenuBarIcon = () => {
         setNavMenuBar(preState=>!preState);
+        if (selectLanguage){
+            setSelectLangauge(preState => !preState);
+        }
     }
     const onClickSelectLangauge = () => {
         setSelectLangauge(preState => !preState);
@@ -104,10 +109,9 @@ const Header = () => {
                 <Button>{filterDonationButtonLangauage.buttonName}<HeartIcon/></Button>
             </NavItemsContainer>
             <NavbarCloseOpenButton rotate={navMenuBar} onClick={onClickMenuBarIcon}>
-                {navMenuBar?<IoMdClose/>:<RiMenu3Line />}
+                {navMenuBar?<IoMdClose/>:<TfiMenu />}
             </NavbarCloseOpenButton>
             </Nav>
-            
         </HeaderContainer>
         <NavSideBarBlurBackgroundConatiner isactive={navMenuBar}>
         </NavSideBarBlurBackgroundConatiner>
@@ -131,6 +135,7 @@ const Header = () => {
                     return (
                     <LinkNavItem to={link} key={id}>
                         <SideBarNavListItem isactive={pathname === link}>
+                            <IndicationActivePathArrowIcon isactive={pathname === link} />
                             <SideBarNavListItemContainer>
                                 {name}
                                 <LinkIcon isactive={pathname === link} />
@@ -147,17 +152,18 @@ const Header = () => {
                         <SelectLanguageContainer isactive={selectLanguage}>
                             {
                                 SelectLanguageData.map(({id, language})=>(
-                                    <SelectLanguageListItem key={id} onClick={()=>{onClickLanguage(id)}}>{language}</SelectLanguageListItem>
+                                    <SelectLanguageListItem key={id} onClick={()=>{onClickLanguage(id)}} isactive={id===languageId}>{language}</SelectLanguageListItem>
                                 ))
                             }
                         </SelectLanguageContainer>
                     </NavSideBarSelectLanguage>
                 </NavSideBarItemContainer>
-                <SideBarButton onClick={onClickJoinUsButton}>{filterJoinusButtonLanguage.buttonName}</SideBarButton>
-                <SideBarButton onClick={onClickDonationButton}>{filterDonationButtonLangauage.buttonName} <HeartIcon/></SideBarButton>
+                <SideBarButtonContainer>
+                    <SideBarButton onClick={onClickDonationButton}>{filterDonationButtonLangauage.buttonName}</SideBarButton>
+                    <SideBarButton onClick={onClickJoinUsButton}>{filterJoinusButtonLanguage.buttonName}</SideBarButton>
+                </SideBarButtonContainer>
                 <NavSidebarMdupsFollowUsContainer>
                     <MdupsLogo src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1747033857/Logo_uttrakhand_1_ahrajl.png' alt='mdups-logo' />
-                    <>
                     <NavSideBarFollowUsHeading>{filterFollowUs.followUs}</NavSideBarFollowUsHeading>
                     <NavSideBarFollowUsContainer>
                         {
@@ -175,7 +181,6 @@ const Header = () => {
                             ))
                         }
                     </NavSideBarFollowUsContainer>
-                    </>
                 </NavSidebarMdupsFollowUsContainer>
             </NavSideBarListItemContainer>
         </NavSideBar>

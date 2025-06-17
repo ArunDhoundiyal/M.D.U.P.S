@@ -68,7 +68,7 @@ export const AboutUsDescription = styled.p`
 font-size:18px;
 color: #555555;
 margin-top:10px;
-text-align:center;
+text-align:left;
 @media screen and (max-width:1000px){
 font-size:15px;
 }

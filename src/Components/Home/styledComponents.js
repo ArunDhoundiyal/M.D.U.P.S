@@ -57,7 +57,7 @@ display:flex;
 flex-direction:row;
 background-color:transparent;
 width:90%;
-margin:50px 0;
+margin:25px 0;
 height:600px;
 position:relative;
 `;
@@ -118,7 +118,7 @@ display:none;
 export const HomeMDUPSLogoDescription = styled.p`
 font-size:18px;
 color: #555555;
-text-align:center;
+text-align:left;
 @media screen and (max-width:1050px){
 font-size:15px;
 }
@@ -142,6 +142,9 @@ text-align:center;
 @media screen and (max-width:1050px){
 font-size:25px;
 }
+@media screen and (max-width:500px){
+font-size:20px;
+}
 `;
 
 export const MDUPSsubHeading = styled.h2`
@@ -154,6 +157,9 @@ align-items:center;
 @media screen and (max-width:1050px){
 font-size:20px;
 }
+@media screen and (max-width:500px){
+font-size:15px;
+}
 `;
 
 export const MDUPSsubHeadingTwo = styled.h3`
@@ -163,6 +169,9 @@ line-height:20px;
 text-align:left;
 @media screen and (max-width:1050px){
 font-size:16px;
+}
+@media screen and (max-width:500px){
+font-size:15px;
 }
 `;
 
@@ -196,7 +205,7 @@ display:flex;
 flex-direction:row;
 background-color:transparent;
 width:90%;
-margin:50px 0;
+margin:25px 0;
 position:relative;
 `;
 
@@ -287,8 +296,7 @@ export const HomeHeadingDesContainer = styled.div`
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+text-align:left;
 padding:20px;
 gap:20px;
 background-color:transparent;
@@ -319,10 +327,8 @@ margin:10px 0;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+text-align:left;
 padding:20px;
-gap:20px;
 background-color:transparent;
 @media screen and (min-width:901px){
 display:none;
@@ -333,21 +339,22 @@ export const HomeCarausalCardContainer = styled.div`
 flex-direction:row;
 background-color:transparent;
 width:90%;
-margin:50px 0;
+margin:25px 0;
 position:relative;
+@media screen and (max-width:1100px){
+margin:0px;
+}
 `;
 
 export const HomeCarausalDesCardContainer = styled.div`
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+text-align:left;
 width:500px;
 height:550px;
 background-color:transparent;
 padding:20px;
-gap:20px;
 overflow:auto;
 &::-webkit-scrollbar{
 width:8px;
@@ -374,7 +381,7 @@ display:none;
 export const AnotherOurMissionCarausalContainer = styled.div`
 @media screen and (max-width:1100px){
 width:90%;
-height:550px;
+height:fit-content;
 }
 @media screen and (min-width:1101px){
 display:none;
@@ -581,6 +588,9 @@ line-height:40px;
 @media screen and (max-width:1050px){
 font-size:25px;
 }
+@media screen and (max-width:500px){
+font-size:20px;
+}
 `;
 
 export const Bold = styled.span`
@@ -626,15 +636,14 @@ flex-direction:row;
 justify-content:center;
 align-items:center;
 cursor:pointer;
-border:solid 4px #32338b;
+border:solid 3px #32338b;
 background-color:transparent;
 height:60px;
 width:250px;
 font-size:20px;
-margin:12px;
+margin:20px 0;
 color: #32338b;
 font-weight:bold;
-border-radius:8px;
 transition-property:background-color, color;
 transition-duration:0.25s;
 transition-timing-function:ease-in-out;
@@ -643,12 +652,11 @@ color: #ffffff;
 background-color: #32338b;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-@media screen and (max-width:1000px){
-width:200px;
-} 
-@media screen and (max-width:950px){
+@media screen and (max-width:1050px){
+height:50px;
+width:180px;
 font-size:15px;
-}
+} 
 `;
 
 export const Heading = styled.h1`
@@ -657,6 +665,9 @@ font-weight:600;
 margin:20px 0;
 @media screen and (max-width:1050px){
 font-size:25px;
+}
+@media screen and (max-width:500px){
+font-size:20px;
 }
 `;
 
@@ -682,9 +693,12 @@ width:90%;
 background-size:cover;
 height:500px;
 position:relative;
-margin:50px 0;
+margin:25px 0;
 @media screen and (max-width:600px){
 height:300px;
+}
+@media screen and (max-width:1000px){
+margin:0px;
 }
 `;
 
@@ -726,8 +740,7 @@ height:100%;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+text-align:left;
 padding:20px;
 gap:20px;
 overflow:auto;
@@ -735,7 +748,7 @@ overflow:auto;
 width:8px;
 }
 &::-webkit-scrollbar-thumb{
-background: #32338b
+background: #32338b;
 }
 @media screen and (max-width:1000px){
 display:none; 
@@ -744,14 +757,12 @@ display:none;
 
 export const SmallScreenHomeDonationContentContainer = styled.div`
 width:90%;
-margin:50px 0;
+margin:25px 0;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+text-align:left;
 padding:20px;
-gap:20px;
 background-color:transparent;
 @media screen and (min-width:1001px){
 display:none;
@@ -759,7 +770,7 @@ display:none;
 `;
 
 export const CarausalContainer = styled.div`
-  margin: 50px auto;
+  margin: 25px auto;
   width: 100%;
   max-width: 100vw;
   overflow: hidden;
@@ -778,7 +789,7 @@ const zoomInZoomOut = keyframes`
 export const HomeCarausalContainer = styled.div`
 position: relative;
 height:450px;
-margin-top:20px;
+margin:25px 0;
 @media screen and (max-width:1000px){
 height:350px;
 }
@@ -803,8 +814,6 @@ left: 0;
 width: 100%;
 height: 100%;
 object-fit: contain;
-
-
 `;
 
 export const TestimonialCarausalContainer = styled.div`
@@ -948,7 +957,7 @@ display:flex;
 flex-direction:column;
 text-align:center;
 width:90%;
-margin:18px;
+margin:25px 0;
 `;
 
 export const HomeVisionAndMissionContainer = styled.div`
@@ -958,7 +967,7 @@ justify-content:space-evenly;
 flex-wrap:wrap;
 width:100%;
 text-align:center;
-margin:30px 0;
+margin:25px 0;
 `;
 
 
@@ -1062,6 +1071,7 @@ export const VisionMissionImageContainer = styled.div`
     color: #32338b;
     font-size: 20px;
     line-height:30px;
+    font-weight:450;  
   `;
 
   export const VisionMissionDescription = styled.p`
@@ -1073,14 +1083,13 @@ export const VisionMissionImageContainer = styled.div`
 
   export const VissionMissionButton = styled.button`
     color:#32338b;
-    border:solid 3px #32338b;
+    border:solid 2px #32338b;
     background-color: transparent;
     cursor:pointer;
     font-weight: bold;
     height:40px;
     width: 100px;
     flex-shrink:0;
-    border-radius:5px;
     transform:scale(1);
     transition-property:transform background-color color;
     transition-duration:0.50s;
@@ -1096,7 +1105,10 @@ export const VisionMissionImageContainer = styled.div`
   width:90%;
   position:relative;
   height:500px;
-  margin:50px 0;
+  margin:25px 0;
+  @media screen and (max-width:800px){
+    margin:0;
+  }
   `;
 
   export const HomeOurTeamCollargeContainer = styled.div`
@@ -1196,10 +1208,10 @@ export const VisionMissionImageContainer = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:center;
-  text-align:center;
-  align-items:center;
+  text-align:left;
   padding:20px;
   gap:20px;
+  margin:0;
   @media screen and (max-width:1100px){
     width: calc(100% - 500px);
     right:500px;
@@ -1214,14 +1226,12 @@ export const VisionMissionImageContainer = styled.div`
   `;
 export const SmallScreenHomeOurTeamContentContainer = styled.div`
 width:90%;
-margin:50px 0;
+margin:25px 0;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+text-align:left;
 padding:20px;
-gap:20px;
 background-color:transparent;
 @media screen and (min-width:801px){
 display:none;
@@ -1256,7 +1266,6 @@ transform:scale(1.2);
 @media screen and (max-width:1000px){
 width:100%;
 }
-
 `;
 
 
@@ -1269,8 +1278,7 @@ height:100%;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+text-align:left;
 padding:20px;
 gap:20px;
 overflow:auto;
@@ -1287,14 +1295,12 @@ display:none;
 
 export const SmallScreenHomeJoinUsContentContainer = styled.div`
 width:90%;
-margin:50px 0;
+margin:25px 0;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-text-align:center;
+text-align:left;
 padding:20px;
-gap:20px;
 background-color:transparent;
 @media screen and (min-width:1001px){
 display:none;
@@ -1306,6 +1312,4 @@ display:none;
 
 
 
-
-
-// Heading
+// HomeDonationImageContainer

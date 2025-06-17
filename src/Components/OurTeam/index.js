@@ -44,7 +44,7 @@ const OurTeam = () => {
         <OurTeamBgContainer>
             <Header/>
             <BackgroundImageContainer>
-                <BackgroundContentContent data-aos="zoom-in">
+                <BackgroundContentContent >
                     <BannerHeading>
                         {filterBannerHeading.bannerHeading}
                     </BannerHeading> 
@@ -52,7 +52,7 @@ const OurTeam = () => {
                 </BackgroundContentContent>
             </BackgroundImageContainer>
             <OurTeamHeadingContainer>
-            <OurTeamHeading data-aos="zoom-in">
+            <OurTeamHeading >
                 {filterMainHeading.mainHeading}
             </OurTeamHeading>
             </OurTeamHeadingContainer>
@@ -70,7 +70,7 @@ const OurTeam = () => {
                     if (id % 2 !== 0){
                         return(
                             <>
-                        <OurTeamContainer key={id} data-aos="zoom-in">
+                        <OurTeamContainer key={id} >
                             <TeamPersonPhotoContainer>
                                 <PersonPhoto src= {img} />
                             </TeamPersonPhotoContainer>
@@ -95,7 +95,7 @@ const OurTeam = () => {
                                     </BoldContent>
                             </TeamMessageContainer>
                         </OurTeamContainer>
-                        <SmallScreenTeamMessageContainer data-aos="zoom-in">
+                        <SmallScreenTeamMessageContainer >
                                 <BoldContent>
                                     {messanger}
                                 </BoldContent>
@@ -120,7 +120,7 @@ const OurTeam = () => {
                     }
                     return(
                         <>
-                    <OurTeamContainer key={id} data-aos="zoom-in">
+                    <OurTeamContainer key={id} >
                         <TeamPersonTwoPhotoContainer>
                             <PersonPhoto src= {img} />
                         </TeamPersonTwoPhotoContainer>
@@ -145,7 +145,7 @@ const OurTeam = () => {
                                     </BoldContent>                            
                         </TeamTwoMessageContainer>
                         </OurTeamContainer>
-                        <SmallScreenTeamMessageContainer data-aos="zoom-in">
+                        <SmallScreenTeamMessageContainer >
                                 <BoldContent>
                                     {messanger}
                                 </BoldContent>
@@ -171,16 +171,16 @@ const OurTeam = () => {
                 })
             }   
                 {/*  */}
-                <OurTeamHeadingContainer data-aos="zoom-in">
+                <OurTeamHeadingContainer >
                     <OurTeamHeading>
                         {filterKaryeKariniSadasaye.mainHeading}
                 </OurTeamHeading>
             </OurTeamHeadingContainer>
             {/*  */}
-            <DisplayOurTeamContainer>
+            <DisplayOurTeamContainer >
                 {
                     filterKaryeKariniSadasaye.data.map(({id,designation, name, color})=>(
-                        <KaryeKariniMembersNameContainer color={color} key={id} data-aos="zoom-in">
+                        <KaryeKariniMembersNameContainer color={color} key={id}>
                             <KaryeKariniMembers>
                             <UserIcon color={color}/>
                             <Name>
@@ -195,15 +195,15 @@ const OurTeam = () => {
             </DisplayOurTeamContainer>
             {/*  */}
             <OurTeamHeadingContainer>
-                    <OurTeamHeading data-aos="zoom-in">
+                    <OurTeamHeading >
                     {filterOrganizationMember.mainHeading}
                 </OurTeamHeading>
             </OurTeamHeadingContainer>
             {/*  */}
-            <DisplayOurTeamContainer>
+            <DisplayOurTeamContainer >
                 {
                     filterOrganizationMember.data.map(({id, name, color})=>(
-                        <KaryeKariniMembersNameContainer color={color} key={id} data-aos="zoom-in">
+                        <KaryeKariniMembersNameContainer color={color} key={id}>
                             <KaryeKariniMembers>
                             <UserIcon color={color}/>
                             <Name>
@@ -217,15 +217,15 @@ const OurTeam = () => {
             </DisplayOurTeamContainer>
             {/*  */}
             <OurTeamHeadingContainer>
-                    <OurTeamHeading data-aos="zoom-in">
+                    <OurTeamHeading >
                     {filterPracharak.mainHeading}
                 </OurTeamHeading>
             </OurTeamHeadingContainer>
             {/*  */}
-            <DisplayOurTeamContainer>
+            <DisplayOurTeamContainer >
                 {
                     filterPracharak.data.map(({id, name, color})=>(
-                        <KaryeKariniMembersNameContainer color={color} key={id} data-aos="zoom-in">
+                        <KaryeKariniMembersNameContainer color={color} key={id}>
                             <KaryeKariniMembers>
                             <UserIcon color={color}/>
                             <Name>
@@ -239,15 +239,15 @@ const OurTeam = () => {
             </DisplayOurTeamContainer>
             {/*  */}
             <OurTeamHeadingContainer>
-                    <OurTeamHeading data-aos="zoom-in">
+                    <OurTeamHeading >
                     {filterSalahkaar.mainHeading}
                 </OurTeamHeading>
             </OurTeamHeadingContainer>
             {/*  */}
-            <DisplayOurTeamContainer>
+            <DisplayOurTeamContainer >
                 {
                     filterSalahkaar.data.map(({id, name, color})=>(
-                        <KaryeKariniMembersNameContainer color={color} key={id} data-aos="zoom-in">
+                        <KaryeKariniMembersNameContainer color={color} key={id}>
                             <KaryeKariniMembers>
                             <UserIcon color={color}/>
                             <Name>
@@ -261,7 +261,7 @@ const OurTeam = () => {
             </DisplayOurTeamContainer>
             {/*  */}
             <OurTeamHeadingContainer>
-                    <OurTeamHeading data-aos="zoom-in">
+                    <OurTeamHeading >
                     {filterMediaPrabhari.mainHeading}
                 </OurTeamHeading>
             </OurTeamHeadingContainer>
@@ -269,7 +269,7 @@ const OurTeam = () => {
             <DisplayOurTeamContainer>   
                 {
                     filterMediaPrabhari.data.map(({id, name, color})=>(
-                        <KaryeKariniMembersNameContainer color={color} key={id} data-aos="zoom-in">
+                        <KaryeKariniMembersNameContainer color={color} key={id} >
                             <KaryeKariniMembers>
                             <UserIcon color={color}/>
                             <Name>

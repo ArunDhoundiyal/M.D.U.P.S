@@ -47,7 +47,7 @@ const AboutUs = () => {
                     <DisplayCurrentPathCardName />
                 </AboutUsTopBannerContainer>
             </AboutUsBannerContainer>
-            <AboutUsDesHeadingContainer data-aos="zoom-in">
+            <AboutUsDesHeadingContainer>
             <Heading>{AboutUsMainHeading.heading}</Heading>
             <AboutUsDescription>
             {findAboutUsOne.aboutusDes}
@@ -62,7 +62,7 @@ const AboutUs = () => {
                 {findAboutUsFour.aboutusDes}
             </AboutUsDescription>
             </AboutUsDesHeadingContainer>
-            <AboutUsMissionContainer data-aos="zoom-in">
+            <AboutUsMissionContainer>
                 <AboutUsMissionImageContainer>
                     <AboutUsMissionImage src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1746510200/20943958_limewm.jpg' alt='mission-image' />
                 </AboutUsMissionImageContainer>
@@ -73,13 +73,13 @@ const AboutUs = () => {
                 </AboutUsDescription>
             </AboutUsMissionContentContainer>
             </AboutUsMissionContainer>
-            <SmallScreenAboutUsMissionContentContainer data-aos="zoom-in">
+            <SmallScreenAboutUsMissionContentContainer>
                    <Heading>{findOurMissionData.heading}</Heading>
                 <AboutUsDescription>
                     {findOurMissionData.ourMission}
                 </AboutUsDescription>
             </SmallScreenAboutUsMissionContentContainer>
-            <AboutUsVisionContainer data-aos="zoom-in">
+            <AboutUsVisionContainer>
                <AboutUsVisionImageContainer>
                 <AboutUsVisionImage src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1746515948/6137734_bjmlnf.jpg' alt='vision-image' />
                 </AboutUsVisionImageContainer> 
@@ -90,7 +90,7 @@ const AboutUs = () => {
                 </AboutUsDescription>
                 </AboutUsVisionContentContainer>
             </AboutUsVisionContainer>
-            <SmallScreenAboutUsVisionContentContainer data-aos="zoom-in">
+            <SmallScreenAboutUsVisionContentContainer>
                                 <Heading>{findOurVisionData.heading}</Heading>
                 <AboutUsDescription>
                     {findOurVisionData.ourVision}

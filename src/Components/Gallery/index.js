@@ -26,7 +26,7 @@ const Gallery = () => {
         <GalleryBgContainer>
         <Header/>
         <ViewInFullSize imagePass={imageId} setPassImage={setImageId} />
-        <GalleryHeading data-aos="zoom-in">{galleryHeading.heading}</GalleryHeading>
+        <GalleryHeading>{galleryHeading.heading}</GalleryHeading>
         <DisplayGalleryContainer >
         {galleryImage.map(({ id, galleryImg }) => {
             const gridRow = id % 2 === 0 ? 10 : 15;

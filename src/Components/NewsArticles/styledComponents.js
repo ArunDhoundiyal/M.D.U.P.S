@@ -150,7 +150,7 @@ export const TeamMessageContainer = styled.div`
   width: calc(100% - 400px);
   overflow: auto;
    padding:20px;
-   text-align:center;
+   text-align:left;
    &::-webkit-scrollbar{
    width:8px;
    }
@@ -166,8 +166,7 @@ export const TeamMessageContainer = styled.div`
     width: 75%;
     display:flex;
     flex-direction:column;
-    align-items:center;
-    text-align:center;
+    text-align:left;
     @media screen and (min-width:1001px){
     display:none;
     }
@@ -182,7 +181,7 @@ export const TeamTwoMessageContainer = styled.div`
   width: calc(100% - 400px);
   overflow: auto;
   padding:20px;
-  text-align:center;
+  text-align:left;
   &::-webkit-scrollbar{
   width:8px;
   }
@@ -197,7 +196,7 @@ export const TeamTwoMessageContainer = styled.div`
 export const MainHeading = styled.h1`
 color: #353839;
 font-size:25px; 
-text-align:center;
+text-align:left;
 @media screen and (max-width:1200px){
 font-size:20px;
 }
@@ -209,7 +208,7 @@ font-size:18px;
 export const SubHeadingOne = styled.h2`
 color: #555555;
 font-size:22px; 
-text-align:center;
+text-align:left;
 @media screen and (max-width:1200px){
 font-size:17px;
 }
@@ -222,7 +221,7 @@ font-size:15px;
 export const SubHeadingTwo = styled.h3`
 color: #32338b;
 font-size:20px; 
-text-align:center;
+text-align:left;
 @media screen and (max-width:1200px){
 font-size:17px;
 }
@@ -234,8 +233,7 @@ font-size:15px;
 export const SubHeadingThree = styled.h4`
 color: #32338b;
 font-size:20px; 
-text-align:center;
-text-align:center;
+text-align:left;
 @media screen and (max-width:1200px){
 font-size:17px;
 }
@@ -247,7 +245,7 @@ font-size:15px;
 export const Message = styled.p`
 font-size:18px;
 color: #555555;
-text-align:center;
+text-align:left;
 @media screen and (max-width:1200px){
 font-size:15px;
 }
