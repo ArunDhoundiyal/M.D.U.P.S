@@ -327,10 +327,6 @@ width:100%;
 margin:50px 0;
 `;
 
-export const MdupsLogo = styled.img`
-height:150px;
-width:150px;
-`;
 
 export const NavSideBarFollowUsContainer = styled.ul`
 display:flex;

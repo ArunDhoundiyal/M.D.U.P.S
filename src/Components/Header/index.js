@@ -33,8 +33,7 @@ import {
     SideBarSelectLanguage,
     ArrowIcon, 
     SideBarButtonContainer, 
-    IndicationActivePathArrowIcon, 
-    MdupsLogo
+    IndicationActivePathArrowIcon
 } from './styledComponents'; 
 
 import {CreateLanguageContext} from '../Context';
@@ -163,7 +162,6 @@ const Header = () => {
                     <SideBarButton onClick={onClickJoinUsButton}>{filterJoinusButtonLanguage.buttonName}</SideBarButton>
                 </SideBarButtonContainer>
                 <NavSidebarMdupsFollowUsContainer>
-                    <MdupsLogo src='https://res.cloudinary.com/dflmaiwxo/image/upload/v1747033857/Logo_uttrakhand_1_ahrajl.png' alt='mdups-logo' />
                     <NavSideBarFollowUsHeading>{filterFollowUs.followUs}</NavSideBarFollowUsHeading>
                     <NavSideBarFollowUsContainer>
                         {
