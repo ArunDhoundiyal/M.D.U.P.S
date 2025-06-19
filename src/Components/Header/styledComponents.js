@@ -1,15 +1,15 @@
 import styled, {keyframes} from 'styled-components';
 import {Link} from 'react-router-dom';
 import { FcDonate } from "react-icons/fc";
-import { RiExternalLinkLine } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { LuCircleCheckBig } from "react-icons/lu";
 
 
 export const HeaderContainer = styled.header`
 height:100px;
-position:fixed;
-top:0;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
 width:100%;
 background-color: #ffffff;
 z-index:1000;
@@ -107,8 +107,29 @@ display:none;
 }
 `;
 
+export const JoinTeamButton = styled.button`
+background-color: #32338b;
+cursor:pointer;
+font-size:15px;
+color: #ffffff;
+height:45px;
+width:140px;
+font-weight:600;
+border:none;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+transition-property:background-color, color;
+transition-duration:0.25s;
+transition-timing-function:ease-in-out;
+&:hover{
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+`;
 
-export const Button = styled.button`
+
+export const DonationButton = styled.button`
 background-color:transparent;
 cursor:pointer;
 font-size:15px;
@@ -220,17 +241,32 @@ list-style-type:none;
 width:100%; 
 display:flex;
 flex-direction:column;
+font-weight:550;
+`;
+
+export const SideBarNavListItem = styled.li`
+  height: 45px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: ${({ isactive }) => (isactive ? ' #ffffff' : ' #555555')};
+  background-color:${({ isactive }) => (isactive ? ' #32338b' : 'transparent')};
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  &:hover {
+    background-color: ${({ isactive }) => (isactive ? 'transparent' : ' #32338b')};
+    color: ${({ isactive }) => (isactive ? ' #32338b' : ' #ffffff')};
+  }
 `;
 
 export const NavSideBarSelectLanguage = styled.li`
 height:auto;
-text-align:left;
 width:100%;
 display:flex;
 flex-direction:column;
 color: #555555;
-font-weight:500;
-font-size:18px; 
 `;
 
 export const SideBarSelectLanguage = styled.div`
@@ -257,7 +293,7 @@ display:flex;
 flex-direction:row;
 justify-content:center;
 align-items:center;
-height:40px;
+height:45px;
 cursor:pointer;
 color:${({isactive})=>isactive ? ' #ffffff' : ' #555555'};
 background-color:${({isactive})=> isactive ? ' #32338b' : ' #ffffff'};
@@ -277,46 +313,6 @@ transform:${({isactive})=> isactive ? 'rotate(180deg)':'rotate(0deg)'};
 transition: transform 0.50s ease-in-out;
 `;
 
-export const SideBarNavListItem = styled.li`
-  height: 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  font-weight: 500;
-  color: ${({ isactive }) => (isactive ? ' #32338b' : ' #555555')};
-  transition: all 0.2s ease-in-out;
-  position: relative;
-  &:hover {
-    background-color: ${({ isactive }) => (isactive ? 'transparent' : ' #32338b')};
-    color: ${({ isactive }) => (isactive ? ' #32338b' : ' #ffffff')};
-  }
-    border-bottom:solid ${({ isactive }) => (isactive ? '2px #32338b' : '1px lightgrey')};
-`;
-
-export const IndicationActivePathArrowIcon = styled(LuCircleCheckBig)`
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-right:20px;
-font-size:30px;
-color:green;
-display:${({isactive})=>(isactive ? 'block' : 'none')};
-`;
-
-
-export const SideBarNavListItemContainer = styled.div`
-display:flex;
-flex-direction:row;
-justify-content:flex-start;
-align-items:center;
-width:100%;
-height:100%;
-font-size:18px; 
-background-color:transparent;
-padding-left:12px;
-`;
 
 export const NavSidebarMdupsFollowUsContainer = styled.div`
 display:flex;
@@ -354,13 +350,29 @@ object-fit:fill;
 export const NavSideBarFollowUsHeading = styled.h1`
 color: #555555;
 font-size:20px;
-font-weight:500;
+font-weight:600;
 `;
 
-export const LinkIcon = styled(RiExternalLinkLine)`
-margin-left:8px;
-display:${({isactive})=> isactive ? 'none' : 'block'};
-`; 
+export const SideBarJoinTeamButton = styled.button`
+background-color:transparent;
+cursor:pointer;
+font-size:15px;
+color: #ffffff;
+height:45px;
+width:110px;
+font-weight:550;
+background-color: #32338b;
+border:none;
+transition-property:background-color, color;
+transition-duration:0.25s;
+transition-timing-function:ease-in-out;
+&:hover{
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+margin:8px;
+flex-shrink:0;
+`;
+
 
 export const SideBarButton = styled.button`
 background-color:transparent;
@@ -368,10 +380,9 @@ cursor:pointer;
 font-size:15px;
 color: #002fa7;
 height:45px;
-width:100px;
-font-weight:600;
+width:110px;
+font-weight:550;
 border:solid 3px #32338b;
-border-radius:8px;
 transition-property:background-color, color;
 transition-duration:0.25s;
 transition-timing-function:ease-in-out;
@@ -389,6 +400,11 @@ display:flex;
 flex-direction:row;
 align-items:center;
 width:250px;
+`;
+
+export const IconWrapper = styled.span`
+margin-right:8px;
+font-size:20px;
 `;
 
 

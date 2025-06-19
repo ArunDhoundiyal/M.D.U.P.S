@@ -2,6 +2,7 @@ import {useState,useContext} from 'react';
 import { TfiMenu } from "react-icons/tfi";
 import { IoMdClose } from "react-icons/io";
 import {useLocation} from 'react-router-dom';
+import { IoLanguage } from "react-icons/io5";
 
 import {
     HeaderContainer, 
@@ -9,7 +10,7 @@ import {
     ImageLogo, 
     NavItemsContainer, 
     ListItem, 
-    Button, 
+    DonationButton, 
     HeartIcon, 
     LinkNavItem, 
     AnchorTag, 
@@ -23,8 +24,6 @@ import {
     NavSideBarFollowUsIconItem, 
     NavSideBarFollowUsIcon, 
     NavSideBarFollowUsHeading, 
-    SideBarNavListItemContainer, 
-    LinkIcon, 
     SideBarButton, 
     NavSideBarBlurBackgroundConatiner, 
     NavSideBarSelectLanguage, 
@@ -32,8 +31,10 @@ import {
     SelectLanguageListItem, 
     SideBarSelectLanguage,
     ArrowIcon, 
-    SideBarButtonContainer, 
-    IndicationActivePathArrowIcon
+    SideBarButtonContainer,  
+    JoinTeamButton, 
+    SideBarJoinTeamButton, 
+    IconWrapper
 } from './styledComponents'; 
 
 import {CreateLanguageContext} from '../Context';
@@ -104,8 +105,8 @@ const Header = () => {
             )
                 }
                 <SelectLanguage />
-                <Button>{filterJoinusButtonLanguage.buttonName}</Button>
-                <Button>{filterDonationButtonLangauage.buttonName}<HeartIcon/></Button>
+                <JoinTeamButton>{filterJoinusButtonLanguage.buttonName}</JoinTeamButton>
+                <DonationButton>{filterDonationButtonLangauage.buttonName}<HeartIcon/></DonationButton>
             </NavItemsContainer>
             <NavbarCloseOpenButton rotate={navMenuBar} onClick={onClickMenuBarIcon}>
                 {navMenuBar?<IoMdClose/>:<TfiMenu />}
@@ -118,15 +119,15 @@ const Header = () => {
             <NavSideBarListItemContainer isactive={navMenuBar}>
                 <NavSideBarItemContainer>
                     {
-                        navData.map(({ id, name, link })=>{
+                        navData.map(({ id, name, link, icon:Icon })=>{
                     if (id===6){
                         return(
                         <AnchorTag href={link} key={id}>
                             <SideBarNavListItem>
-                                <SideBarNavListItemContainer>
-                                    {name} 
-                                    <LinkIcon isactive={pathname === link} />
-                                </SideBarNavListItemContainer>
+                                <IconWrapper>
+                                    <Icon />
+                                </IconWrapper>
+                                     {name} 
                             </SideBarNavListItem>
                         </AnchorTag>
                         )
@@ -134,11 +135,10 @@ const Header = () => {
                     return (
                     <LinkNavItem to={link} key={id}>
                         <SideBarNavListItem isactive={pathname === link}>
-                            <IndicationActivePathArrowIcon isactive={pathname === link} />
-                            <SideBarNavListItemContainer>
-                                {name}
-                                <LinkIcon isactive={pathname === link} />
-                            </SideBarNavListItemContainer>
+                            <IconWrapper>
+                                <Icon />
+                            </IconWrapper>
+                                 {name}
                         </SideBarNavListItem>    
                     </LinkNavItem>
                     )
@@ -146,6 +146,9 @@ const Header = () => {
                     }
                     <NavSideBarSelectLanguage>
                         <SideBarSelectLanguage onClick={onClickSelectLangauge}>
+                            <IconWrapper>
+                                <IoLanguage />
+                            </IconWrapper>
                         SELECT LANGUAGE <ArrowIcon isactive={selectLanguage}/> 
                         </SideBarSelectLanguage>
                         <SelectLanguageContainer isactive={selectLanguage}>
@@ -158,11 +161,11 @@ const Header = () => {
                     </NavSideBarSelectLanguage>
                 </NavSideBarItemContainer>
                 <SideBarButtonContainer>
-                    <SideBarButton onClick={onClickDonationButton}>{filterDonationButtonLangauage.buttonName}</SideBarButton>
-                    <SideBarButton onClick={onClickJoinUsButton}>{filterJoinusButtonLanguage.buttonName}</SideBarButton>
+                    <SideBarJoinTeamButton onClick={onClickDonationButton}>{filterJoinusButtonLanguage.buttonName}</SideBarJoinTeamButton>
+                    <SideBarButton onClick={onClickJoinUsButton}>{filterDonationButtonLangauage.buttonName}</SideBarButton>
                 </SideBarButtonContainer>
                 <NavSidebarMdupsFollowUsContainer>
-                    <NavSideBarFollowUsHeading>{filterFollowUs.followUs}</NavSideBarFollowUsHeading>
+                    <NavSideBarFollowUsHeading>{filterFollowUs.followUs}:</NavSideBarFollowUsHeading>
                     <NavSideBarFollowUsContainer>
                         {
                             NavSideBarFollowUsIconData.map(({id, icon, name, link})=> (

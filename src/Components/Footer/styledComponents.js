@@ -6,7 +6,6 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
-import { PiArrowBendRightDownBold } from "react-icons/pi";
 export const FacebookIcon = styled(FaFacebookF)``;
 export const LinkedinIcon = styled(FaLinkedinIn)``;
 export const YoutubeIcon = styled(IoLogoYoutube)``;
@@ -31,6 +30,11 @@ transition-timing-function:ease-in-out;
 &:hover{
 color: #32338b;
 background-color: #ffffff;
+}
+@media screen and (max-width:400px){
+font-size:15px;
+height:30px;
+width:30px;
 }
 `;
 
@@ -161,6 +165,9 @@ display:${({isactive})=> isactive ? 'flex' : 'none'};
 
 export const FooterNameHeading = styled.h4`
 font-weight:600;
+@media screen and (max-width:400px){
+font-size:14px;
+}
 `;
 
 export const FooterAddressContainer = styled.div`
@@ -181,13 +188,23 @@ cursor:pointer;
 text-align:left;
 width:100%;
 }
+@media screen and (max-width:400px){
+font-size:14px;
+}
 `;
 
 export const FooterHeading = styled.h3`
 margin:12px 0;
+@media screen and (max-width:400px){
+font-size:15px;
+}
 `;
 
-export const Detail = styled.p``;
+export const Detail = styled.p`
+@media screen and (max-width:400px){
+font-size:14px;
+}
+`;
 
 export const FollowUsContainer = styled.div`
 text-align:left;
@@ -197,13 +214,6 @@ position:relative;
 text-align:left;
 width:100%;
 }
-`;
-
-export const FollowUsIndicationArrow = styled(PiArrowBendRightDownBold)`
-position:absolute;
-top:20px;
-left:90px;
-font-size:22px;
 `;
 
 export const FollowUsLogoContainer = styled.div`
@@ -232,6 +242,9 @@ margin:30px 0;
 
 export const CopyRightMsg = styled.p`
 color: #ffffff;
+@media screen and (max-width:400px){
+font-size:14px;
+}
 `;
 
 
@@ -257,8 +270,14 @@ width:100%;
 
 export const PrivacyPolicyMsg = styled.p`
 color: #ffffff;
+@media screen and (max-width:400px){
+font-size:14px;
+}
 `;
 
 export const TermsConditionMsg = styled.p`
 color: #ffffff;
+@media screen and (max-width:400px){
+font-size:14px;
+}
 `;

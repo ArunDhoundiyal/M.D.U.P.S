@@ -6,7 +6,12 @@ import { MdWorkspacePremium } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { VscLaw } from "react-icons/vsc";
-
+import { IoHome } from "react-icons/io5";
+import { FaUserLarge } from "react-icons/fa6";
+import { FaNewspaper } from "react-icons/fa6";
+import { RiTeamFill } from "react-icons/ri";
+import { GrGallery } from "react-icons/gr";
+import { BiSolidPhoneCall } from "react-icons/bi";
 export const mdupsName = [
     {
         languageId:'HINDI', 
@@ -25,28 +30,28 @@ export const mdupsName = [
 
 export const NavItems = [
     {languageId:"HINDI", navData:[
-        {id:1, name:'होम', link:'/'}, 
-        {id:2, name:'हमारे बारे में',link:'/about-us'},
-        {id:3, name:'समाचार और लेख', link:'/news-&-articles'},
-        {id:4, name:"हमारी टीम", link:'/our-team'},  
-        {id:5, name:"गैलरी", link:'/gallery'},
-        {id:6,  name:"संपर्क करें", link:'#contact-us'}
+        {id:1, name:'होम', link:'/', icon:IoHome}, 
+        {id:2, name:'हमारे बारे में',link:'/about-us', icon:FaUserLarge},
+        {id:3, name:'समाचार और लेख', link:'/news-&-articles', icon:FaNewspaper},
+        {id:4, name:"हमारी टीम", link:'/our-team', icon:RiTeamFill},  
+        {id:5, name:"गैलरी", link:'/gallery', icon:GrGallery},
+        {id:6,  name:"संपर्क करें", link:'#contact-us', icon:BiSolidPhoneCall}
     ]}, 
     {languageId:"ENGLISH", navData:[
-        {id:1, name:'HOME', link:'/'}, 
-        {id:2, name:'ABOUT US',link:'/about-us'},
-        {id:3, name:'NEWS & ARTICLES', link:'/news-&-articles'},
-        {id:4, name:"OUR TEAM", link:'/our-team'},  
-        {id:5, name:"GALLERY", link:'/gallery'},
-        {id:6,  name:"CONTACT US", link:'#contact-us'}
+        {id:1, name:'HOME', link:'/', icon:IoHome}, 
+        {id:2, name:'ABOUT - US',link:'/about-us', icon:FaUserLarge},
+        {id:3, name:'NEWS & ARTICLES', link:'/news-&-articles', icon:FaNewspaper},
+        {id:4, name:"OUR - TEAM", link:'/our-team', icon:RiTeamFill},  
+        {id:5, name:"GALLERY", link:'/gallery', icon:GrGallery},
+        {id:6,  name:"CONTACT - US", link:'#contact-us', icon:BiSolidPhoneCall}
     ]}, 
 {languageId: "GARHWALI", navData: [
-    { id: 1, name: "मुख पृष्ठ", link: "/" },
-    { id: 2, name: "हमार परिचय", link: "/about-us" },
-    { id: 3, name: "समाचार अ लेख", link: "/news-&-articles" },
-    { id: 4, name: "हमरी टीम", link: "/our-team" },
-    { id: 5, name: "गैलरी", link: "/gallery" },
-    { id: 6, name: "संपर्क करि", link: "#contact-us" }
+    { id: 1, name: "मुख पृष्ठ", link: "/", icon:IoHome},
+    { id: 2, name: "हमार परिचय", link: "/about-us", icon:FaUserLarge},
+    { id: 3, name: "समाचार अ लेख", link: "/news-&-articles", icon:FaNewspaper},
+    { id: 4, name: "हमरी टीम", link: "/our-team", icon:RiTeamFill},
+    { id: 5, name: "गैलरी", link: "/gallery", icon:GrGallery},
+    { id: 6, name: "संपर्क करि", link: "#contact-us", icon:BiSolidPhoneCall}
   ]
 }
 ]; 

@@ -7,7 +7,6 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { FcDonate } from "react-icons/fc";
 import { LiaLocationArrowSolid } from "react-icons/lia";
 
-
 export const ArrowIcon = styled(LiaLocationArrowSolid)`
 transform:rotate(90deg);
 `;
@@ -60,6 +59,12 @@ width:90%;
 margin:25px 0;
 height:600px;
 position:relative;
+@media screen and (max-width:800px){
+position:static;
+height:auto;
+
+}
+
 `;
 
 export const HomeMDUPSLogoContainer = styled.div`
@@ -71,7 +76,8 @@ height:100%;
 width:400px;
 @media screen and (max-width:800px){
 width:100%;
-}
+position:static;
+height:auto;
 }
 `;
 
@@ -197,6 +203,7 @@ left:0;
 object-fit:cover;
 @media screen and (max-width:800px){
 object-fit :contain;
+position:static;
 }
 `;
 
@@ -636,20 +643,15 @@ flex-direction:row;
 justify-content:center;
 align-items:center;
 cursor:pointer;
-border:solid 3px #32338b;
-background-color:transparent;
+background-color: #32338b;
+border:none;
 height:60px;
 width:250px;
 font-size:20px;
 margin:20px 0;
-color: #32338b;
-font-weight:bold;
-transition-property:background-color, color;
-transition-duration:0.25s;
-transition-timing-function:ease-in-out;
-&:hover{
 color: #ffffff;
-background-color: #32338b;
+font-weight:bold;
+&:hover{
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 @media screen and (max-width:1050px){
@@ -1312,4 +1314,4 @@ display:none;
 
 
 
-// HomeDonationImageContainer
+// HomeDonationContainer

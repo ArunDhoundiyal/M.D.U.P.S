@@ -30,9 +30,8 @@ import {
      TermsConditionMsg, 
      FollowUsIconButton, 
      FooterItemParentContainer,
-     FooterDropDownButton, 
-     FollowUsIndicationArrow
-} from './styledComponents';
+     FooterDropDownButton
+    } from './styledComponents';
 
 import {footerData} from '../Data';
 
@@ -139,7 +138,6 @@ const Footer = () => {
             </FooterContactUsContainer>
             </FooterItemParentContainer>
                             <FollowUsContainer>
-                                <FollowUsIndicationArrow />
                     <FooterHeading>{followUs}</FooterHeading>
                     <FollowUsLogoContainer>
                         <FollowUsIconButton>

@@ -59,9 +59,12 @@ font-weight:600;
 line-height:40px;
 margin-top:20px;
 text-align:center;
-@media screen and (max-width:1000px){
+@media screen and (max-width:1050px){
 font-size:25px;
-}   
+}
+@media screen and (max-width:500px){
+font-size:20px;
+}
 `;
 
 export const AboutUsDescription = styled.p`

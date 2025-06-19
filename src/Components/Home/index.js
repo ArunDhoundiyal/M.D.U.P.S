@@ -671,7 +671,7 @@ const Home = () => {
             </SmallScreenHomeJoinUsContentContainer> 
 
            {/* Dontaion */}
-            <HomeDonationContainer >
+            <HomeDonationContainer>
             <HomeDonationImageContainer>
               <DonationImage src='https://res.cloudinary.com/da52fiag8/image/upload/v1744111622/ChatGPT_Image_Apr_8_2025_04_54_00_PM_f91xxs.jpg' alt='donation-img' />
             </HomeDonationImageContainer>
