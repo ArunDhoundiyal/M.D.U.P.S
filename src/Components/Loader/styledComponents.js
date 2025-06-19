@@ -12,6 +12,9 @@ transform:scale(1.2) rotateY(360deg);
 
 export const Img = styled.img`
 height:175px;
+@media screen and (max-width:700px){
+height:100px;
+}
 animation-name:${loading};
 animation-duration:1.5s;
 animation-timing-function: ease-in-out;
